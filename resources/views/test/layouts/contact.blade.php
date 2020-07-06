@@ -1,6 +1,6 @@
 <div class="col-md-9 order-md-1">
    <h4 class="mb-3">Test form</h4>
-<form class="needs-validation" novalidate action="{{route('contact')}}">
+<form class="needs-validation" novalidate action="">
      <div class="row">
        <div class="col-md-6 mb-3">
          <label for="firstName">First name</label>
