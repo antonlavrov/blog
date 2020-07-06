@@ -1,0 +1,15 @@
+.big-banner{
+  
+   background-image: url('../img/bannerGrey.jpg');
+   background-position: center; 
+   background-repeat: no-repeat; 
+   background-size: cover; 
+   height: auto;
+   width: 100%;
+  
+ }
+ .textCol{
+    color:#ffffff ;
+    font-weight:bolder;
+    
+ }
