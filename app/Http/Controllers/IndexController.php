@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 class IndexController extends Controller
 {
 
-    protected $request;
+   // protected $request;
 
     public function showMain(){
     if(view()->exists('test.index')){
@@ -27,8 +27,9 @@ class IndexController extends Controller
         }
 
      public function showCont(Request $request){   
+            print_r($request->all); 
               return view ('test.mainContact')->with('title','contact');  
-              print_r($request->all); 
+              
               
          }
     

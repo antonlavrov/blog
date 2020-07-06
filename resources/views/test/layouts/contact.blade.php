@@ -1,6 +1,6 @@
 <div class="col-md-9 order-md-1">
    <h4 class="mb-3">Test form</h4>
-   <form class="needs-validation" novalidate>
+<form class="needs-validation" novalidate action="{{route('contact')}}">
      <div class="row">
        <div class="col-md-6 mb-3">
          <label for="firstName">First name</label>
@@ -25,7 +25,7 @@
       <div class="invalid-feedback">
         Please enter a valid email address for shipping updates.
       </div>
-    </div>
+      </div>
 
     <div class="form-group">
       <label for="exampleFormControlTextarea1">Example textarea</label>
@@ -34,6 +34,7 @@
 
     <div class="m-x-auto">
       <button type="button", class="btn btn-outline-primary">Submit</button>
+    </form>
     </div>
 
 
