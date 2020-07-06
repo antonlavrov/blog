@@ -6,31 +6,33 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
+    // protected $request;
 
-   // protected $request;
-
-    public function showMain(){
-    if(view()->exists('test.index')){
-        return view ('test.index');
-    }
-    else abort(404);      
-    }
-
-    public function showAuth(){
+    public function showMain()
+    {
+        if (view()->exists('test.index')) {
+            return view('test.index');
+        } 
         
-        if(view()->exists('test.layouts.auth')){
+        abort(404);
+    }
 
-            return view ('test.layouts.auth')->with('title','Auth');
-             
+    public function showAuth()
+    {
+        if (view()->exists('test.layouts.auth')) {
+            return view('test.layouts.auth')->with('title','Auth');
         }
-        else abort(404);      
-        }
+        
+        abort(404);      
+    }
 
-     public function showCont(Request $request){   
-            print_r($request->all); 
-              return view ('test.mainContact')->with('title','contact');  
-              
-              
-         }
-    
+    public function showCont(Request $request)
+    {    
+        return view('test.mainContact')->with('title','contact');    
+    }
+
+    public function saveCont(Request $request)
+    {   
+        dd($request->all());
+    }
 }
