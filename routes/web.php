@@ -16,8 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', ['as'=>'home','uses'=>'IndexController@showMain']) ;
 Route::get('/page',['uses'=>'TestController@show','as'=>'page']);
 Route::get('/auth',['uses'=>'indexController@showAuth','as'=>'auth']);
-Route::match(['get','post'],'/contact',['uses'=>'indexController@showCont','as'=>'contact']);
 
+Route::get('/contact',['uses'=>'indexController@showCont','as'=>'contact']);
+Route::post('/contact',['uses'=>'indexController@saveCont','as'=>'save-contact']);
 
 
 
