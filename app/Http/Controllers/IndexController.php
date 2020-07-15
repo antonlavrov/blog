@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Http\RedirectResponse;
 
 class IndexController extends Controller
 {
@@ -11,7 +13,8 @@ class IndexController extends Controller
     public function showMain()
     {
         if (view()->exists('test.index')) {
-            return view('test.index');
+            $view= view('test.index')->withTitle('memento')->render();
+            return response($view);
         } 
         
         abort(404);
@@ -33,6 +36,13 @@ class IndexController extends Controller
 
     public function saveCont(Request $request)
     {   
-        dd($request->all());
+        if($request->isMethod('post')){
+            $request->flash();
+        }
+        return redirect('/contact');
+        
     }
+
 }
+
+    
