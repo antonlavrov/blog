@@ -1,8 +1,26 @@
 <div class="col-md-9 order-md-1">
 
-            <pre>{{print_r (Session::all())}}</pre>
+            {{-- <pre>{{print_r (Session::all())}}</pre> --}}
 
     <h4 class="mb-3">Test form</h4>
+
+    @if($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>
+                        {{$error}}
+                    </li>
+                @endforeach
+            </ul>
+        </div>
+        {{-- @else
+        <div class="alert alert-success">
+            <h3>Success!</h3>
+            <p>You have send the form.</p>
+        </div> --}}
+    @endif
+
     <form class="needs-validation" method="POST" action="{{route('save-contact')}}" novalidate>
         <div class="row">
             <div class="col-md-6 mb-3">

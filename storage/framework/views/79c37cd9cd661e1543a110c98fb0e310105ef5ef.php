@@ -1,8 +1,23 @@
 <div class="col-md-9 order-md-1">
 
-            <pre><?php echo e(print_r (Session::all())); ?></pre>
+            
 
     <h4 class="mb-3">Test form</h4>
+
+    <?php if($errors->any()): ?>
+        <div class="alert alert-danger">
+            <ul>
+                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <li>
+                        <?php echo e($error); ?>
+
+                    </li>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+            </ul>
+        </div>
+        
+    <?php endif; ?>
+
     <form class="needs-validation" method="POST" action="<?php echo e(route('save-contact')); ?>" novalidate>
         <div class="row">
             <div class="col-md-6 mb-3">

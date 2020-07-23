@@ -7,6 +7,10 @@ use Facade\Ignition\QueryRecorder\Query;
 use Facade\Ignition\SolutionProviders\RunningLaravelDuskInProductionProvider;
 use Illuminate\Support\Facades\DB;
 use App\article;
+use App\country;
+use App\user;
+use App\role;
+
 
 
 class TestController extends Controller
@@ -14,59 +18,28 @@ class TestController extends Controller
 
     //protected static $articles;
 
+   
+
     public function __construct() {
         
     }
 
     public  function getArticles(){
-    //    $articles = article::where('id','>=',2)->orderBy('name')->take(2)->get();
-    //    foreach($articles as $article){
-    //        echo $article->img.'<br />';
-    //    }
-    // $articles = article::findOrFail();
-    //echo $articles->name;
-    // $article= new Article();
-    // $article->name='New article';
-    // $article->text='New article';
-    // $article=Article::find(11);
-    // $article->text = 'New text';
-    // $article->save();
-   
-        // Article::create(
-        //                 [
-        //                     'name'=>'vasya',
-        //                     'text'=>'pososeh?'
-        //                 ]
-        //                 );
+     
+        // $article = article::find(9);
+        // $article->name = 'pososeh?';
+        // echo $article->name;
+        //dump($article);
 
-
-        // article::firstOrCreate([
-        //                             'name'=>'vasya2',
-        //                             'text'=>'pososeh2?'
-        //                       ]);
-        // $article = article::firstOrNew([
-        //                         'name'=>'vasya3',
-        //                         'text'=>'pososeh3?'
-        //                     ]);
+        $article = article::find(9);
+        // $arr = ['key'=>'TEST_ARTICLES'];
+        // $article->text = $arr;
         // $article->save();
-        // $article=article::find(15);
-        // $article->delete();
-        //article::destroy(14);
-        // $articles = article::withTrashed()->get();
-        // foreach($articles as $article){
-        //     if($article->trashed()){
-        //         echo $article->name.' was deleted <br />';
-        //         $article->restore();
-        //     }else{
-        //         echo $article->name.' not deleted <br />';
-        //     }
-        // }
-       // $article->delete();
-        //$articles=Article::all();
-        // $articles=Article::find(12);
-        // $articles->forceDelete();
-       // dump($articles);
-       return ;
+        dump($article->toJson());
+
+
+
+      return ;
     }
 
 
