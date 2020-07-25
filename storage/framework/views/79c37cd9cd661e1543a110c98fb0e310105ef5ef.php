@@ -1,31 +1,28 @@
 <div class="col-md-9 order-md-1">
 
-            {{-- <pre>{{print_r (Session::all())}}</pre> --}}
+            
 
     <h4 class="mb-3">Test form</h4>
 
-    @if($errors->any())
+    <?php if($errors->any()): ?>
         <div class="alert alert-danger">
             <ul>
-                @foreach ($errors->all() as $error)
+                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $error): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                     <li>
-                        {{$error}}
+                        <?php echo e($error); ?>
+
                     </li>
-                @endforeach
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </ul>
         </div>
-        {{-- @else
-        <div class="alert alert-success">
-            <h3>Success!</h3>
-            <p>You have send the form.</p>
-        </div> --}}
-    @endif
+        
+    <?php endif; ?>
 
-    <form class="needs-validation" method="POST" action="{{route('save-contact')}}" novalidate>
+    <form class="needs-validation" method="POST" action="<?php echo e(route('save-contact')); ?>" novalidate>
         <div class="row">
             <div class="col-md-6 mb-3">
                 <label for="firstName">First name</label>
-            <input type="text" name="firstName" class="form-control" id="firstName" placeholder="" value="{{old('firstName')}}" required>
+            <input type="text" name="firstName" class="form-control" id="firstName" placeholder="" value="<?php echo e(old('firstName')); ?>" required>
                 <div class="invalid-feedback">
                     Valid first name is required.
                 </div>
@@ -33,7 +30,7 @@
 
             <div class="col-md-6 mb-3">
                 <label for="lastName">Last name</label>
-            <input type="text" name="lastName" class="form-control" id="lastName" placeholder="" value="{{ old('lastName') }}" required>
+            <input type="text" name="lastName" class="form-control" id="lastName" placeholder="" value="<?php echo e(old('lastName')); ?>" required>
                 <div class="invalid-feedback">
                     Valid last name is required.
                 </div>
@@ -42,7 +39,7 @@
 
         <div class="mb-3">
             <label for="email">Email</label>
-            <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com"  value="{{ old('email') }}">
+            <input type="email" name="email" class="form-control" id="email" placeholder="you@example.com"  value="<?php echo e(old('email')); ?>">
             <div class="invalid-feedback">
                 Please enter a valid email address for shipping updates.
             </div>
@@ -50,7 +47,7 @@
 
         <div class="form-group">
             <label for="exampleFormControlTextarea1">Example textarea</label>
-            <textarea class="form-control" name="text" id="textBox" rows="3"> {{ old('text') }}</textarea>
+            <textarea class="form-control" name="text" id="textBox" rows="3"> <?php echo e(old('text')); ?></textarea>
         </div>
 
         <div class="m-x-auto">
@@ -58,3 +55,4 @@
         </div>
     </form>
 </div>
+<?php /**PATH /home/vagrant/code/blog/resources/views/test/layouts/contact.blade.php ENDPATH**/ ?>

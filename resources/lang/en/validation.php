@@ -130,8 +130,15 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'firstName' => [
+            'required' => 'заполни поле :attribute , или ты самый умный,форму отправляешь пустой???? ',
+        ],
+        'lastName' => [
+            'required' => 'заполни поле :attribute , или ты самый умный,форму отправляешь пустой???? ',
+        ],
+        'email' => [
+            'email' => 'это не email, это срань я бы сказал ',
+            'required' => 'заполни поле :attribute , или ты самый умный,форму отправляешь пустой???? '
         ],
     ],
 
